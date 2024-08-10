@@ -225,14 +225,11 @@ function ResumeItem({
               </div>
             </div>
           </div>
-          <video className="max-w-full mt-6 md:mt-12 rounded-[10px]" controls>
-            <source
-              src={
-                "https://s8.uupload.ir/filelink/IPspZxBHYK70_e80f38deac/video_xnwk.mp4"
-              }
-              type="video/mp4"
-            ></source>
-          </video>
+          <img
+            src="/bilito2.png"
+            className="max-w-full mt-6 md:mt-12 rounded-[10px]"
+          />
+
           <span
             onClick={() => {
               setShowModal(false);

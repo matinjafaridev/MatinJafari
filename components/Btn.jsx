@@ -1,8 +1,9 @@
 import React from "react";
 
-function Btn({ title, svg }) {
+function Btn({ title, svg, moreAboutBtn }) {
   return (
     <button
+      onClick={moreAboutBtn && moreAboutBtn}
       className="border font-semibold z-[50] lg:mt-8 transition-all duration-500 overflow-hidden
      group relative rounded-[35px] py-4 pr-[70px] pl-[35px] text-white border-primary"
     >

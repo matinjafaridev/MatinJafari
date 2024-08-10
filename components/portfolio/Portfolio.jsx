@@ -11,13 +11,13 @@ function Portfolio({ whichPage }) {
           wordOneTitle={"MY"}
           wordTwoTitle={"PORTFOLIO"}
         />
-        <div className="flex flex-wrap items-center justify-center w-full gap-6 2xs:gap-8">
-          <div
-            // data-aos="fade-up"
-            // data-aos-anchor-placement="top-bottom"
-            // data-aos-duration="3000"
-            className="w-full 2xs:w-auto"
-          >
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-duration="3000"
+          className="flex flex-wrap items-center justify-center w-full gap-6 2xs:gap-8"
+        >
+          <div className="w-full 2xs:w-auto">
             <ResumeItem
               project={"Bilito"}
               language={"Persian"}
@@ -29,12 +29,7 @@ function Portfolio({ whichPage }) {
               bg={"/bilito.png"}
             />
           </div>
-          <div
-            // data-aos="fade-up"
-            // data-aos-anchor-placement="top-bottom"
-            // data-aos-duration="3000"
-            className="w-full 2xs:w-auto"
-          >
+          <div className="w-full 2xs:w-auto">
             <ResumeItem
               project={"Bilito"}
               language={"Persian"}
@@ -46,12 +41,7 @@ function Portfolio({ whichPage }) {
               bg={"/bilito.png"}
             />
           </div>
-          <div
-            // data-aos="fade-up"
-            // data-aos-anchor-placement="top-bottom"
-            // data-aos-duration="3000"
-            className="w-full 2xs:w-auto"
-          >
+          <div className="w-full 2xs:w-auto">
             <ResumeItem
               project={"Bilito"}
               language={"Persian"}

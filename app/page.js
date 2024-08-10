@@ -8,7 +8,6 @@ import MenuBar from "@/components/menuBar/MenuBar";
 import MenuItem from "@/components/menuBar/MenuItem";
 import Portfolio from "@/components/portfolio/Portfolio";
 import { useEffect, useState } from "react";
-import Head from "next/head";
 
 const menuItems = [
   {
@@ -95,10 +94,18 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [whichPage]);
+
+  // window.addEventListener("mouseleave", () => {
+  //   alert("leave");
+  // });
+
   if (changePageEfect) {
     setTimeout(() => {
       setChangePageEfect(false);
-    }, 1000);
+    }, 500);
   }
 
   useEffect(() => {
@@ -108,22 +115,27 @@ export default function Home() {
   const [goX, setGox] = useState(0);
   const [goY, setGoY] = useState(0);
 
+  const [getHidden, setGetHidden] = useState(false);
+
   return (
     <>
-      <Head>
-        <title>teswererert</title>
-      </Head>
       <div
+        onMouseLeave={() => {
+          setGetHidden(true);
+        }}
+        onMouseEnter={() => {
+          setGetHidden(false);
+        }}
         onMouseMove={(event) => {
           setGoY(event.clientY);
           setGox(event.clientX);
         }}
-        className="relative"
+        className="relative "
       >
         <div
           className={`${
             changePageEfect
-              ? "translate-y-[100%] z-[99999] duration-[700ms] transition-transform z ease-[cubic-bezier(0.95,0.05,0.795,0.035)]"
+              ? "translate-y-[100%] z-[99999] duration-[500ms] transition-transform z ease-[cubic-bezier(0.95,0.05,0.795,0.035)]"
               : " opacity-0 z-0"
           } fixed w-full h-full bg-primaryGray`}
         ></div>
@@ -154,7 +166,8 @@ export default function Home() {
         <div
           className={`${
             whichPage == "about" ? " flex" : " hidden"
-          }  absolute w-full duration-1000 transition-transform ease-[cubic-bezier(.77,0,.175,1)] overflow-hidden pt-[50px] pb-[150px] md:py-[150px] bg-[#121212] flex items-center
+          }  absolute w-full duration-1000 transition-transform ease-[cubic-bezier(.77,0,.175,1)]
+           overflow-hidden pt-[50px] pb-[150px] md:py-[150px] bg-[#121212] flex items-center
             justify-between text-fs`}
         >
           <div className="fixed z-[6000] right-12 top-[30%] hidden lg:block">
@@ -228,14 +241,20 @@ export default function Home() {
         </div>
 
         {/* custom-cursor */}
-        {/* <div
-        style={{ top: goY + "px", left: goX + "px" }}
-        className="fixed z-50 flex items-center justify-center transition duration-300 rounded-full size-10 bg-primary/30"
-      ></div>
-      <span
-        style={{ top: goY + "px", left: goX + "px" }}
-        className="inline-block fixed transition-all duration-75 ease-in-out z-50 translate-x-4 translate-y-4   bg-primary rounded-full size-[8px]"
-      ></span> */}
+        <div
+          style={{ top: goY - 17 + "px", left: goX - 17 + "px" }}
+          className={`${
+            !getHidden ? "flex" : " hidden"
+          }  fixed z-[9999999]  items-center justify-center transition-all 
+          duration-100 ease-linear rounded-full pointer-events-none size-10 bg-primary/30`}
+        ></div>
+        <span
+          style={{ top: goY - 17 + "px", left: goX - 17 + "px" }}
+          className={`${
+            !getHidden ? "inline-block" : " hidden"
+          }  pointer-events-none fixed transition duration-300 z-[9999999]
+           translate-x-4 translate-y-4 bg-primary rounded-full size-[8px]`}
+        ></span>
         {/* custom-cursor */}
       </div>
     </>

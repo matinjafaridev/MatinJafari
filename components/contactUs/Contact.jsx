@@ -1,7 +1,118 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "../Title";
-
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 function Contact({ whichPage }) {
+  (function () {
+    emailjs.init({
+      publicKey: "qizsrcvC48sqxsTZB",
+    });
+  })();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isDisabl, setIsDisabl] = useState(false);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (name.trim().length < 3) {
+      toast.error("Name must be at least 3 characters long.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    } else if (email.trim().length < 10) {
+      toast.error("Please enter a valid email address.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    } else if (subject.trim().length < 4) {
+      toast.error("The subject must be at least 4 characters long.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    } else if (message.trim().length < 15) {
+      toast.error("The message text must be at least 15 characters long.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    } else {
+      setIsDisabl(true);
+      const userMessamge = {
+        name,
+        email,
+        subject,
+        message,
+      };
+      emailjs
+        .send("service_tkmaovo", "template_ox28nh9", userMessamge)
+        .then((res) => {
+          if (res.status == 200) {
+            toast.success("Message sent successfully!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            });
+            setIsDisabl(false);
+          } else {
+            toast.warn("Sorry, something went wrong. Please try again later.", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            });
+            setIsDisabl(false);
+          }
+        });
+
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    }
+  };
+
   return (
     whichPage == "contact" && (
       <div className="container flex flex-col items-start text-white md:items-center">
@@ -45,7 +156,7 @@ function Contact({ whichPage }) {
 
                   <div className="flex flex-col items-start ">
                     <span className=" text-white/50">Address Point</span>
-                    <span className="text-white ">Iran, isfahan</span>
+                    <span className="text-white ">Iran, Esfahan</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-x-4 text-primary">
@@ -162,25 +273,47 @@ function Contact({ whichPage }) {
           {/* Left */}
 
           {/* Right */}
-          <form action="#" className="space-y-8 ">
+          <form
+            onSubmit={(e) => {
+              submitHandler(e);
+            }}
+            action="#"
+            className="space-y-8 "
+          >
             <div className="flex flex-col items-center space-y-8 lg:space-y-0 lg:space-x-8 lg:flex-row">
               <input
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 placeholder="YOUR NAME"
                 className="focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-full lg:w-[352px] placeholder:text-white/25 rounded-[30px] py-3 px-7 bg-primaryGray"
                 type="text"
               />
               <input
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
                 placeholder="YOUR EMAIL"
                 className="focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-full lg:w-[352px] placeholder:text-white/25 rounded-[30px] py-3 px-7 bg-primaryGray"
-                type="text"
+                type="email"
               />
             </div>
             <input
-              placeholder="YOUR SEBJECT"
+              value={subject}
+              onChange={(e) => {
+                setSubject(e.target.value);
+              }}
+              placeholder="YOUR SUBJECT"
               className=" w-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-white/25 rounded-[30px] py-3 px-7 bg-primaryGray"
               type="text"
             />
             <textarea
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               rows={7}
               placeholder="YOUR MESSAGE"
               className=" w-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-white/25 rounded-[30px] py-3 px-7 bg-primaryGray"
@@ -188,6 +321,7 @@ function Contact({ whichPage }) {
               id=""
             ></textarea>
             <button
+              disabled={isDisabl}
               type="submit"
               className="border font-semibold z-[50] mt-8 transition-all duration-500 overflow-hidden
              group relative rounded-[35px] py-4 pr-[70px] pl-[35px] text-white border-primary"
@@ -214,6 +348,7 @@ function Contact({ whichPage }) {
           </form>
           {/* Right */}
         </section>
+        <ToastContainer />
       </div>
     )
   );

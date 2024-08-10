@@ -13,7 +13,7 @@ function ProgressBar({ count, caption }) {
             text: { fill: "#fff", textSize: 15 },
           }}
           value={count}
-          text={`${count}%`}
+          // text={`${count}%`}
         />
       </div>
       <span className="text-base">{caption}</span>

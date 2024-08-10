@@ -5,10 +5,10 @@ import Title from "../Title";
 import ProgressBar from "./ProgressBar";
 import Image from "next/image";
 
-function About({ whichPage }) {
+function About({ whichPage, showModal }) {
   return (
-    whichPage == "about" && (
-      <div className="container flex flex-col items-start justify-center w-full text-white sm:items-center">
+    (showModal || whichPage == "about") && (
+      <div className="container flex flex-col items-start justify-center w-full text-white min-h-dvh sm:items-center">
         <Title
           backTitle={"RESUME"}
           wordOneTitle={"ABOUT"}
@@ -60,7 +60,7 @@ function About({ whichPage }) {
                   <span className="block mb-1 opacity-80 md:inline">
                     Phone:{" "}
                   </span>
-                  <span className="">09903331793</span>
+                  <span className="">09013137757</span>
                 </div>
                 <div>
                   <span className="block mb-1 opacity-80 md:inline">
@@ -81,13 +81,13 @@ function About({ whichPage }) {
                   <span className="block mb-1 opacity-80 md:inline">
                     Nationality:{" "}
                   </span>
-                  <span> Persian</span>
+                  <span> Iranian</span>
                 </div>
                 <div>
                   <span className="block mb-1 opacity-80 md:inline">
                     Address:{" "}
                   </span>
-                  <span> Iran</span>
+                  <span> Iran,Esfahan</span>
                 </div>
                 <div>
                   <span className="block mb-1 opacity-80 md:inline">
@@ -99,7 +99,7 @@ function About({ whichPage }) {
                   <span className="block mb-1 opacity-80 md:inline">
                     langages:{" "}
                   </span>
-                  <span>Persian</span>
+                  <span>Persian, English</span>
                 </div>
               </div>
             </div>
@@ -126,11 +126,11 @@ function About({ whichPage }) {
           <div className="flex md:gap-[30px] w-full lg:w-auto mt-12 lg:mt-auto justify-center items-center flex-wrap">
             <div className="lg:space-y-[30px] w-full lg:w-auto lg:block flex justify-between items-center gap-x-4">
               <BoxCreator
-                count={12}
+                count={3}
                 titleOne={"YEARS OF"}
                 titleTwo={"EXPERRIENCE"}
               />
-              <BoxCreator count={3} titleOne={"RESUME"} titleTwo={"WEB APP"} />
+              <BoxCreator count={4} titleOne={"RESUME"} titleTwo={"WEB APP"} />
             </div>
           </div>
         </div>
@@ -146,24 +146,24 @@ function About({ whichPage }) {
           </span>
           <div className="flex flex-col w-full gap-y-12">
             <div className="flex-wrap justify-between hidden w-full sm:flex">
-              <ProgressBar count={55} caption={"JAVASCRIPT"} />
-              <ProgressBar count={55} caption={"HTML"} />
-              <ProgressBar count={55} caption={"CSS"} />
+              <ProgressBar count={67} caption={"JAVASCRIPT"} />
+              <ProgressBar count={80} caption={"HTML"} />
+              <ProgressBar count={80} caption={"CSS"} />
             </div>
             <div className="flex-wrap justify-between hidden w-full sm:flex">
-              <ProgressBar count={55} caption={"REACT"} />
-              <ProgressBar count={55} caption={"NEXT"} />
-              <ProgressBar count={55} caption={"TAILWIND"} />
+              <ProgressBar count={65} caption={"REACT"} />
+              <ProgressBar count={70} caption={"NEXT"} />
+              <ProgressBar count={90} caption={"TAILWIND"} />
             </div>
 
             <div className="flex flex-wrap justify-between w-full gap-y-8 sm:hidden">
-              <ProgressBar count={55} caption={"JAVASCRIPT"} />
-              <ProgressBar count={55} caption={"HTML"} />
-              <ProgressBar count={55} caption={"CSS"} />
+              <ProgressBar count={67} caption={"JAVASCRIPT"} />
+              <ProgressBar count={80} caption={"HTML"} />
+              <ProgressBar count={80} caption={"CSS"} />
 
-              <ProgressBar count={55} caption={"REACT"} />
-              <ProgressBar count={55} caption={"NEXT"} />
-              <ProgressBar count={55} caption={"TAILWIND"} />
+              <ProgressBar count={65} caption={"REACT"} />
+              <ProgressBar count={70} caption={"NEXT"} />
+              <ProgressBar count={90} caption={"TAILWIND"} />
             </div>
           </div>
         </div>

@@ -131,7 +131,7 @@ function Contact({ whichPage }) {
           <div className="">
             <div className="flex flex-col justify-between w-full h-full font-OpenSansRegular text-fs">
               <h6 className="font-bold font-PoppinsRegular mb-6 text-[26px]">
-                DONT'T BE SHY !
+                DON'T BE SHY !
               </h6>
               <p className=" leading-[25px] max-w-[360px]">
                 Feel free to get in touch with me. I am always open to

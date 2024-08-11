@@ -49,10 +49,11 @@ function MainPage({ whichPage }) {
               <span className="text-white">WEB DEVELOPER</span>
             </div>
             <p className="text-white px-4 sm:px-0 max-w-[550px] md:max-w-[450px] xl:max-w-[600px] mb-4 lg:mb-auto lg:mt-4 font-OpenSansRegular text-sm lg:text-fs leading-[30px] lg:leading-[35px]">
-              I'm a Iranin based web designer & front‑end developer focused on
-              crafting clean & user‑friendly experiences, I am passionate about
-              building excellent software that improves the lives of those
-              around me.
+              As an Iranian-based front-end developer, I'm passionate about
+              building clean, user-friendly digital experiences. With a strong
+              foundation in HTML, CSS, JavaScript, React.js and Next.js, I
+              specialize in developing responsive, accessible websites and web
+              applications using the latest frameworks and libraries.
             </p>
             <Btn
               moreAboutBtn={moreAboutBtn}

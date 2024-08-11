@@ -190,7 +190,7 @@ export default function Home() {
           }  absolute w-full duration-1000 transition-transform ease-[cubic-bezier(.77,0,.175,1)]
          overflow-hidden pt-[50px] pb-[150px] md:py-[150px] bg-[#121212] justify-center text-fs min-h-screen`}
         >
-          <div className="fixed right-12 top-[30%] hidden lg:block">
+          <div className="fixed z-10 right-12 top-[30%] hidden lg:block">
             <MenuBar
               menuItems={menuItems}
               setChangePageEfect={setChangePageEfect}
@@ -243,15 +243,15 @@ export default function Home() {
         {/* custom-cursor */}
         <div
           style={{ top: goY - 17 + "px", left: goX - 17 + "px" }}
-          className={`${
-            !getHidden ? "flex" : " hidden"
+          className={` hidden ${
+            !getHidden ? "md:flex" : " md:hidden"
           }  fixed z-[9999999]  items-center justify-center transition-all 
           duration-100 ease-linear rounded-full pointer-events-none size-10 bg-primary/30`}
         ></div>
         <span
           style={{ top: goY - 17 + "px", left: goX - 17 + "px" }}
-          className={`${
-            !getHidden ? "inline-block" : " hidden"
+          className={` hidden ${
+            !getHidden ? "md:inline-block" : " md:hidden"
           }  pointer-events-none fixed transition duration-300 z-[9999999]
            translate-x-4 translate-y-4 bg-primary rounded-full size-[8px]`}
         ></span>

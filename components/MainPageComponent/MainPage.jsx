@@ -14,7 +14,7 @@ function MainPage({ whichPage }) {
     whichPage == "home" && (
       <>
         <div className="flex justify-between w-full overflow-hidden ">
-          <div className=" hidden lg:block bg-primary w-[1593px]  md:h-[150vh] fixed -left-[76rem] -rotate-[17deg]"></div>
+          <div className=" hidden lg:block bg-primary w-[1593px] md:h-[150vh] fixed -left-[76rem] -rotate-[17deg]"></div>
           <div
             data-aos="fade-right"
             data-aos-duration="1500"

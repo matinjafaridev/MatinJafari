@@ -146,7 +146,7 @@ export default function Home() {
             whichPage == "home" ? " flex" : "hidden"
           }  absolute  w-full duration-1000  transition-transform
          ease-[cubic-bezier(.77,0,.175,1)] overflow-hidden bg-[#121212]  items-center
-         justify-between py-[100px] md:py-0 min-h-screen text-fs`}
+         justify-between min-h-[110vh] sm:min-h-screen text-fs`}
         >
           <div className="fixed right-12 top-[30%] hidden lg:block">
             <MenuBar

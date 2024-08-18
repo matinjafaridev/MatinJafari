@@ -8,7 +8,8 @@ function ResumeItem({
   client,
   preview,
   link,
-  video,
+  cover,
+  linkText,
 }) {
   const [showModal, setShowModal] = useState(false);
   return (
@@ -226,7 +227,7 @@ function ResumeItem({
             </div>
           </div>
           <img
-            src="/bilito2.png"
+            src={cover}
             className="max-w-full mt-6 md:mt-12 rounded-[10px]"
           />
 

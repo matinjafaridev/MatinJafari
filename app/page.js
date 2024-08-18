@@ -241,7 +241,7 @@ export default function Home() {
         </div>
 
         {/* custom-cursor */}
-        <div
+        {/* <div
           style={{ top: goY - 17 + "px", left: goX - 17 + "px" }}
           className={` hidden ${
             !getHidden ? "md:flex" : " md:hidden"
@@ -254,7 +254,7 @@ export default function Home() {
             !getHidden ? "md:inline-block" : " md:hidden"
           }  pointer-events-none fixed transition duration-300 z-[9999999]
            translate-x-4 translate-y-4 bg-primary rounded-full size-[8px]`}
-        ></span>
+        ></span> */}
         {/* custom-cursor */}
       </div>
     </>

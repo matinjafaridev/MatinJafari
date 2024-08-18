@@ -19,35 +19,37 @@ function Portfolio({ whichPage }) {
         >
           <div className="w-full 2xs:w-auto">
             <ResumeItem
-              project={"Bilito"}
-              language={"Persian"}
+              project={"Memory Game"}
+              language={"English"}
               client={"WebSite"}
-              video={"/video.mp4"}
-              preview={"https://for.liara.run"}
-              link={"https://for.liara.run/"}
-              title={"Bilito project"}
-              bg={"/bilito.png"}
+              cover={"/memory-game-2.png"}
+              preview={"memory-game-app"}
+              link={"https://memory-game-kappa-six.vercel.app/"}
+              title={"Memory Game project"}
+              bg={"/memory-game.png"}
             />
           </div>
+
           <div className="w-full 2xs:w-auto">
             <ResumeItem
               project={"Bilito"}
               language={"Persian"}
               client={"WebSite"}
-              video={"/video.mp4"}
-              preview={"https://for.liara.run"}
+              cover={"/bilito2.png"}
+              preview={"bilito-app"}
               link={"https://for.liara.run/"}
               title={"Bilito project"}
               bg={"/bilito.png"}
             />
           </div>
+
           <div className="w-full 2xs:w-auto">
             <ResumeItem
               project={"Bilito"}
               language={"Persian"}
               client={"WebSite"}
-              video={"/video.mp4"}
-              preview={"https://for.liara.run"}
+              cover={"/bilito2.png"}
+              preview={"bilito-app"}
               link={"https://for.liara.run/"}
               title={"Bilito project"}
               bg={"/bilito.png"}
